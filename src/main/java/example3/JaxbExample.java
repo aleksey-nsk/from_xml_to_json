@@ -20,12 +20,7 @@ public class JaxbExample {
     // В классе Marshaller присутствует много перегруженных методов marshal() для
     // использования с разными типами объектов вывода информации
     try {
-      //private static File fileJson = new File("testfiles\\file.json");
-      // private static final String absolutePathToFile = fileJson.getAbsolutePath(); // абсолютный путь к файлу начиная с корня системы
-      // private static final String FILENAME = absolutePathToFile;
-
-      File fileXml = new File(System.getProperty("user.dir") + File.separator + "customer.xml");
-
+      File fileXml = new File("testfiles\\customer.xml");
       JAXBContext context = JAXBContext.newInstance(Customer.class);
       Marshaller marshaller = context.createMarshaller();
       marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -34,5 +29,11 @@ public class JaxbExample {
     } catch (JAXBException e) {
       Logger.getLogger(JaxbExample.class.getName()).log(Level.SEVERE, null, e);
     }
+    // В результате получаем xml-файл:
+    // <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    // <customer id="1">
+    //   <age>22</age>
+    //   <name>Вася Пупкин</name>
+    // </customer>
   }
 }
