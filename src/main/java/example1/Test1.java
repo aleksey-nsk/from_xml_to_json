@@ -3,44 +3,44 @@ package example1;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Test1 {
-  // можно сразу писать new Gson()
+  // Можно сразу писать new Gson(), вот так:
   // private static final Gson GSON = new Gson();
-  // чтобы продемонстрировать красивый вывод с отступами, воспользуемся
-  // GsonBuilder-ом
+  // Но чтобы продемонстрировать красивый вывод с отступами,
+  // воспользуемся GsonBuilder-ом:
   private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
   public static void main(String[] args) {
-    Person person = new Person("Вася", 30, Arrays.asList("Москва", "Новосибирск", "Омск"));
+    Person person1 = new Person("Вася", 30, Arrays.asList("Москва", "Новосибирск", "Омск"));
 
-    // Теперь хотим получить строковое представление в JSON-формате нашего объекта
-    // Для этого воспользуемся библиотекой gson
-    // Сначала определили private static final Gson GSON
-    // Теперь:
-    String json = GSON.toJson(person);
-    System.out.println(json);
+    System.out.println("***** Из объекта-Java в JSON-формат *****");
+    // Сначала хотим получить строковое представление в JSON-формате нашего объекта-Java.
+    // Для этого воспользуемся библиотекой gson.
+    // Сначала определили private static final Gson GSON, а теперь:
+    String jsonString = GSON.toJson(person1);
+    System.out.println("jsonString = " + jsonString);
 
-    // ПРОДЕМОНСТРИРУЕМ ОБРАТНУЮ КОНВЕРТИРУЕМОСТЬ
-    // Передадим json -- получим объект Java:
-    Person person1 = GSON.fromJson(json, Person.class);
-    System.out.println("person1 = " + person1);
-    System.out.println("person1.getName() = " + person1.getName());
-    System.out.println("person1.getAge() = "  + person1.getAge());
-    System.out.println("person1.getGeoHistory() = " + person1.getGeoHistory());
+    System.out.println("***** Из JSON получим объект-Java *****");
+    // Теперь продемонстрируем обратную конвертируемость, то есть
+    // передадим json, и получим объект-Java:
+    Person person2 = GSON.fromJson(jsonString, Person.class);
+    System.out.println("person2 = " + person2); // person2 = example1.Person@4e718207
+    System.out.println("person2.getName() = " + person2.getName());
+    System.out.println("person2.getAge() = "  + person2.getAge());
+    System.out.println("person2.getGeoHistory() = " + person2.getGeoHistory());
   }
 }
 
-// Опишем некий класс, который в дальнейшем
-// преобразуем в JSON
+// Опишем некий класс, объект которого
+// в дальнейшем преобразуем в JSON-формат (и обратно):
 class Person {
   private String name;
   private Integer age;
-  @SerializedName("geo")
+  // @SerializedName("geo")
   private List<String> geoHistory = new ArrayList<>(); // список строк где хранится геолокация
 
   public Person(String name, Integer age, List<String> geoHistory) {
@@ -49,15 +49,8 @@ class Person {
     this.geoHistory = geoHistory;
   }
 
-  public String getName() {
-    return name;
-  }
-
-  public Integer getAge() {
-    return age;
-  }
-
-  public List<String> getGeoHistory() {
-    return geoHistory;
-  }
+  // Методы геттеры:
+  public String getName() { return name; }
+  public Integer getAge() { return age; }
+  public List<String> getGeoHistory() { return geoHistory; }
 }
