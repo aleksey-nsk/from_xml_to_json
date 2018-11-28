@@ -13,7 +13,14 @@ import java.util.logging.Logger;
 
 class BaseClass {
 
-  // Для записи JSON-файла
+  // -------------------------------------------
+  // XML-файл
+  // -------------------------------------------
+  private static final File fileXml = new File("testfiles\\company.xml");
+
+  // -------------------------------------------
+  // JSON-файл
+  // -------------------------------------------
   private static File companyJson = new File("testfiles\\company.json");
   private static final String absolutePathToFile = companyJson.getAbsolutePath(); // абсолютный путь к файлу начиная с корня системы
   private static final String FILENAME = absolutePathToFile;
@@ -21,8 +28,8 @@ class BaseClass {
   // -------------------------------------------
   // Преобразование Java-объекта в XML-файл
   // -------------------------------------------
-  protected static void fromObjectToXml(Company company, File fileXml) {
-    System.out.println("Метод для преобразования Java-объекта в XML-файл");
+  protected static void fromObjectToXml(Company company) {
+    System.out.println("\n***** Метод для преобразования Java-объекта в XML-файл *****\n");
     try {
       JAXBContext context = JAXBContext.newInstance(Company.class);
       Marshaller marshaller = context.createMarshaller();
@@ -37,8 +44,8 @@ class BaseClass {
   // -------------------------------------------
   // Преобразование XML-файла в Java-объект
   // -------------------------------------------
-  protected static Company fromXmlToObject(File fileXml) throws JAXBException {
-    System.out.println("Метод для преобразования XML-файла в Java-объект");
+  protected static Company fromXmlToObject() throws JAXBException {
+    System.out.println("\n***** Метод для преобразования XML-файла в Java-объект *****\n");
     JAXBContext context = JAXBContext.newInstance(Company.class);
     Unmarshaller unmarshaller = context.createUnmarshaller();
     Company company = (Company) unmarshaller.unmarshal(fileXml);
@@ -51,13 +58,11 @@ class BaseClass {
   // Преобразование Java-объекта в JSON-файл
   // -------------------------------------------
   protected static void fromObjectToJson(Company company) {
-    System.out.println("Метод для преобразования Java-объекта в JSON-файл");
-    //fromObjectToJson(bcsFromXml); // преобразование Java-объекта в JSON-файл
-    // System.out.println("Преобразование Java-объекта в JSON-файл");
+    System.out.println("\n***** Метод для преобразования Java-объекта в JSON-файл *****\n");
     Gson gson = new Gson();
     String jsonString = gson.toJson(company);
     System.out.println("Строка jsonString = " + jsonString);
-    System.out.println("Запишем строку jsonString в файл");
+    System.out.println("Запишем строку jsonString в JSON-файл");
     try (FileWriter fileWriter = new FileWriter(FILENAME)) {
       fileWriter.write(jsonString);
     } catch (IOException e) {
