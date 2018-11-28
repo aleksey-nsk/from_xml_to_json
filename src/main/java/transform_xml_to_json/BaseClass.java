@@ -1,6 +1,8 @@
 package transform_xml_to_json;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -59,7 +61,8 @@ class BaseClass {
   // -------------------------------------------
   protected static void fromObjectToJson(Company company) {
     System.out.println("\n***** Метод для преобразования Java-объекта в JSON-файл *****\n");
-    Gson gson = new Gson();
+    // Gson gson = new Gson();
+    Gson gson = new GsonBuilder().setPrettyPrinting().create(); // красивый JSON-файл с отступами
     String jsonString = gson.toJson(company);
     System.out.println("Строка jsonString = " + jsonString);
     System.out.println("Запишем строку jsonString в JSON-файл");

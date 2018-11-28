@@ -1,1 +1,6 @@
-{"id":601,"name":"БКС","email":"bcs@testemail.ru","inn":112901}
+{
+  "id": 601,
+  "name": "БКС",
+  "email": "bcs@testemail.ru",
+  "inn": 112901
+}
