@@ -2,5 +2,17 @@
   "id": 601,
   "name": "ООО Компания БрокерКредитСервис",
   "email": "new_email_bcs@testemail.ru",
-  "inn": 112901
+  "inn": 112901,
+  "members": [
+    {
+      "lastName": "Иванов",
+      "firstName": "Иван",
+      "age": 21
+    },
+    {
+      "lastName": "Сидоров",
+      "firstName": "Сидор",
+      "age": 33
+    }
+  ]
 }
