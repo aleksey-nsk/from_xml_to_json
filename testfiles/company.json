@@ -3,16 +3,16 @@
   "name": "ООО Компания БрокерКредитСервис",
   "email": "new_email_bcs@testemail.ru",
   "inn": 112901,
-  "members": [
+  "phones": [
     {
-      "lastName": "Иванов",
-      "firstName": "Иван",
-      "age": 21
+      "type": "Мобильный",
+      "code": "+7(383)",
+      "number": "220-99-00"
     },
     {
-      "lastName": "Сидоров",
-      "firstName": "Сидор",
-      "age": 33
+      "type": "Факс",
+      "code": "+7(666)",
+      "number": "333-88-44"
     }
   ]
 }

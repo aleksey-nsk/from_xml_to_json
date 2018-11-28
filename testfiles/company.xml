@@ -4,16 +4,16 @@
     <name>БКС</name>
     <email>bcs@testemail.ru</email>
     <inn>112901</inn>
-    <memberwrapper>
-        <members>
-            <lastName>Иванов</lastName>
-            <firstName>Иван</firstName>
-            <age>21</age>
-        </members>
-        <members>
-            <lastName>Сидоров</lastName>
-            <firstName>Сидор</firstName>
-            <age>33</age>
-        </members>
-    </memberwrapper>
+    <phones>
+        <phone>
+            <type>Мобильный</type>
+            <code>+7(383)</code>
+            <number>220-99-00</number>
+        </phone>
+        <phone>
+            <type>Факс</type>
+            <code>+7(666)</code>
+            <number>333-88-44</number>
+        </phone>
+    </phones>
 </company>

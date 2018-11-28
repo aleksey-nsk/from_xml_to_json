@@ -2,7 +2,6 @@ package transform_xml_to_json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;

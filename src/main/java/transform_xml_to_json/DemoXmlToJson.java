@@ -3,29 +3,17 @@ package transform_xml_to_json;
 import javax.xml.bind.JAXBException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static transform_xml_to_json.Company.createCompany;
+import static transform_xml_to_json.Phone.createPhone;
 
 class DemoXmlToJson extends BaseClass {
 
-  public static Person createPerson(String lastName, String firstName, int age) {
-    Person person = new Person();
-    person.setLastName(lastName);
-    person.setFirstName(firstName);
-    person.setAge(age);
-    return person;
-  }
 
   public static void main(String[] args) {
-    System.out.println("Создаём объект-Java");
-    Company bcs = new Company();
-    bcs.setId(601);
-    bcs.setName("БКС");
-    bcs.setEmail("bcs@testemail.ru");
-    bcs.setInn(112901);
-
-    bcs.getMembers().add(createPerson("Иванов", "Иван", 21));
-    bcs.getMembers().add(createPerson("Сидоров", "Сидор", 33));
-
-
+    System.out.println("Создаём Java-объект");
+    Company bcs = createCompany(601, "БКС", "bcs@testemail.ru", 112901);
+    bcs.getPhone().add(createPhone("Мобильный", "+7(383)", "220-99-00"));
+    bcs.getPhone().add(createPhone("Факс", "+7(666)", "333-88-44"));
 
 
     fromObjectToXml(bcs); // преобразование Java-объекта в XML-файл
