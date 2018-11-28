@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<company>
-    <id>601</id>
+<company id="601">
     <name>БКС</name>
     <email>bcs@testemail.ru</email>
     <inn>112901</inn>

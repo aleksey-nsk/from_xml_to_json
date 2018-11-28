@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlType(propOrder = {"id", "name", "email", "inn", "phone"})
+@XmlType(propOrder = { /* "id", */ "name", "email", "inn", "phone"})
 @XmlRootElement
 class Company {
 
@@ -17,7 +17,8 @@ class Company {
   private List<Phone> phone = new ArrayList<>();
 
   // Методы сеттеры
-  @XmlElement
+  //@XmlElement
+  @XmlAttribute
   public void setId(int id) { this.id = id; }
   @XmlElement
   public void setName(String name) { this.name = name; }
