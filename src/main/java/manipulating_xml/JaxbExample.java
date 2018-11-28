@@ -1,4 +1,4 @@
-package example3;
+package manipulating_xml;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -8,7 +8,7 @@ import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class JaxbExample {
+class JaxbExample {
 
   public static void main(String[] args) {
     System.out.println("\n***** Marshalling: Преобразование Java-объекта в XML-файл *****\n");
@@ -34,7 +34,7 @@ public class JaxbExample {
     }
 
     System.out.println("\nXML-файл записан");
-    // В результате получаем xml-файл:
+    // В результате получаем xml-файл customer.xml:
     // <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     // <customer id="1">
     //   <age>22</age>
@@ -48,7 +48,7 @@ public class JaxbExample {
     // Выполним обратную операцию: преобразуем XML-файл в Java объект.
     // Это делается с помощью метода Unmarshaller.unmarshal()
     // В классе Unmarshaller есть много перегруженных методов unmarshal()
-    // которые решают большинство распространенных случаев использования.
+    // которые решают большинство распространенных случаев использования
     try {
       File fileXml = new File("testfiles\\customer.xml");
       JAXBContext context = JAXBContext.newInstance(Customer.class);

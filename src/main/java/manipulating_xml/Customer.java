@@ -1,11 +1,11 @@
-package example3;
+package manipulating_xml;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Customer {
+class Customer {
 
   private String name;
   private int age;
