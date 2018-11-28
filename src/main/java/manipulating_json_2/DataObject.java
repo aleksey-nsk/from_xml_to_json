@@ -4,12 +4,13 @@ POJO (Plain Old Java Object -- простой Java объект в старом 
 который мы будем преобразовывать в JSON средствами библиотеки GSON
 */
 
-package example2;
+package manipulating_json_2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataObject {
+class DataObject {
+
   private String data1 = "Some value";
   private int data2 = 123;
   private List<String> list = new ArrayList<String>() {

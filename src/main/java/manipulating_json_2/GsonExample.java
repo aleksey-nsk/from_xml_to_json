@@ -1,22 +1,19 @@
-/*
-В рассмотренном ниже примере мы создадим объект типа DataObject
-и запишем его JSON представление в файл file.json
-*/
-
-package example2;
+package manipulating_json_2;
 
 import com.google.gson.Gson;
-
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class GsonExample {
+class GsonExample {
+
   private static File fileJson = new File("testfiles\\file.json");
   private static final String absolutePathToFile = fileJson.getAbsolutePath(); // абсолютный путь к файлу начиная с корня системы
   private static final String FILENAME = absolutePathToFile;
 
   public static void main(String[] args) {
+    // Сначала создадим объект типа DataObject
+    // и запишем его JSON-представление в файл file.json
     DataObject object1 = new DataObject();
     Gson gson = new Gson();
     String jsonString = gson.toJson(object1);
@@ -32,9 +29,9 @@ public class GsonExample {
     // {"data1":"Some value","data2":123,"list":["List item 1","List item 2","List item 3"]}
 
     // ------------------------------------------------------------------------
+
     // Теперь для преобразования полученной на предыдущем шаге JSON-строки
     // обратно в Java-объект воспользуемся методом fromJson()
-    // ------------------------------------------------------------------------
     System.out.println("\nПреобразуем JSON-строку в Java-объект");
     try {
       BufferedReader reader = new BufferedReader(new FileReader(FILENAME));
