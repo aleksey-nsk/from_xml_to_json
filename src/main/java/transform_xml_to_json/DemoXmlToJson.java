@@ -21,7 +21,9 @@ class DemoXmlToJson extends BaseClass {
 
       // Тут по заданию необходимо поменять несколько значений
       // у объекта
-
+      bcsFromXml.setName("ООО Компания БрокерКредитСервис"); // поменял название
+      bcsFromXml.setEmail("new_email_bcs@testemail.ru"); // поменял email
+      
       fromObjectToJson(bcsFromXml); // преобразование Java-объекта в JSON-файл
     } catch (JAXBException e) {
       Logger.getLogger(DemoXmlToJson.class.getName()).log(Level.SEVERE, null, e);
