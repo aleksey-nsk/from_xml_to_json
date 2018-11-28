@@ -26,15 +26,15 @@ public class App {
     // Создаём personList
     List<Person> personList = reader.getPersons(json);
     System.out.println("personList = " + personList);
-    // Может просто Person создаём
-    // Person person = (Person) reader.getPersons(json);
+    // Может просто Person01 создаём
+    // Person01 person = (Person01) reader.getPersons(json);
 
-    // Выводим результат в консоль (List из 2-ух Person-ов)
+    // Выводим результат в консоль (List из 2-ух Person01-ов)
     for (Person person : personList) {
       System.out.println("person = " + person);
     }
     // -- резултат:
-    // Person{firstName='Вася', lastName='Пупкин'}
-    // Person{firstName='Петя', lastName='Сидоров'}
+    // Person01{firstName='Вася', lastName='Пупкин'}
+    // Person01{firstName='Петя', lastName='Сидоров'}
   }
 }

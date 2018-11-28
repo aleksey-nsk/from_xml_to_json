@@ -16,16 +16,16 @@ import java.util.List;
 /* public class JsonReader {
 
   // Метод принимает в качестве параметра json как строку
-  // Метод возвращает List Person-ов
-  public List<Person> getPersons(String json) {
+  // Метод возвращает List Person01-ов
+  public List<Person01> getPersons(String json) {
     ObjectMapper mapper = new ObjectMapper();
-    List<Person> methodList = new ArrayList<>();
+    List<Person01> methodList = new ArrayList<>();
     try {
-      // methodList = Arrays.asList(mapper.readValue(json, Person[].class));
+      // methodList = Arrays.asList(mapper.readValue(json, Person01[].class));
 
       // Вызываем метод readValue() в который передаём
       // json и массив
-      Person[] arrayPerson = mapper.readValue(json, Person[].class);
+      Person01[] arrayPerson = mapper.readValue(json, Person01[].class);
       // Преобразуем array_Персонов в List_Персонов:
       methodList = Arrays.asList(arrayPerson);
     } catch (IOException e) {
@@ -39,7 +39,7 @@ import java.util.List;
 //
 public class JsonReader {
 
-  // Данный метод будет мапить наш json на объекты класса Person
+  // Данный метод будет мапить наш json на объекты класса Person01
   public List<Person> getPersons(String json) {
     Gson gson = new Gson();
     // Есть методы:
@@ -49,11 +49,11 @@ public class JsonReader {
     // Вызываем метод fromJson()
     //   1-ый параметр -- наш строковый json
     //   2-ой параметр -- List_Персонов_в_TypeToken
-    // return gson.fromJson(json, new TypeToken<List<Person>>(){}.getType());
+    // return gson.fromJson(json, new TypeToken<List<Person01>>(){}.getType());
     List<Person> listPersons = new ArrayList<>();
     listPersons = gson.fromJson(json, new TypeToken<List<Person>>(){}.getType());
     return listPersons;
-    // Person person = gson.fromJson(json, Person.class);
-    // return (List<Person>) person;
+    // Person01 person = gson.fromJson(json, Person01.class);
+    // return (List<Person01>) person;
   }
 }
