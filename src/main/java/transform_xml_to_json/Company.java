@@ -13,26 +13,30 @@ class Company {
   private String name;
   private String email;
   private int inn;
-  @SerializedName("phones")
-  private List<Phone> phone = new ArrayList<>();
+  @SerializedName("phones") private List<Phone> phone = new ArrayList<>();
   private String country;
   private String city;
 
   // Методы сеттеры
-  //@XmlElement
   @XmlAttribute
   public void setId(int id) { this.id = id; }
+
   @XmlElement
   public void setName(String name) { this.name = name; }
+
   @XmlElement
   public void setEmail(String email) { this.email = email; }
+
   @XmlElement
   public void setInn(int inn) { this.inn = inn; }
+
   @XmlElementWrapper(name="phones")
   @XmlElement
   public void setPhone(List<Phone> phone) { this.phone = phone; }
+
   @XmlElement
   public void setCountry(String country) { this.country = country; }
+
   @XmlElement
   public void setCity(String city) { this.city = city; }
 
@@ -56,12 +60,8 @@ class Company {
     return company;
   }
 
-  // Подправить !!!!!!!!!
   @Override
   public String toString() {
-    return "  Company [id=" + id + ",\n"
-         + "    name=" + name + ",\n"
-         + "    email=" + email + ",\n"
-         + "    inn=" + inn + "]";
+    return "Company [id=" + id + ", name=" + name + ", ... ]";
   }
 }

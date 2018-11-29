@@ -15,12 +15,12 @@ import java.util.logging.Logger;
 class BaseClass {
 
   // -------------------------------------------
-  // XML-файл
+  // Объект для создания XML-файла
   // -------------------------------------------
   private static final File fileXml = new File("testfiles\\company.xml");
 
   // -------------------------------------------
-  // JSON-файл
+  // Объект для создания JSON-файла
   // -------------------------------------------
   private static File companyJson = new File("testfiles\\company.json");
   private static final String absolutePathToFile = companyJson.getAbsolutePath(); // абсолютный путь к файлу начиная с корня системы

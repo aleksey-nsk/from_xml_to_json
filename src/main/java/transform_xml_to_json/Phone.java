@@ -10,13 +10,12 @@ class Phone {
   private String code;
   private String number;
 
-  @XmlElement
-  public void setType(String type) { this.type = type; }
-  @XmlElement
-  public void setCode(String code) { this.code = code; }
-  @XmlElement
-  public void setNumber(String number) { this.number = number; }
+  // Методы сеттеры
+  @XmlElement public void setType(String type) { this.type = type; }
+  @XmlElement public void setCode(String code) { this.code = code; }
+  @XmlElement public void setNumber(String number) { this.number = number; }
 
+  // Методы геттеры
   public String getType() { return type; }
   public String getCode() { return code; }
   public String getNumber() { return number; }
