@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlType(propOrder = { /* "id", */ "name", "email", "inn", "phone"})
+@XmlType(propOrder = {"name", "email", "inn", "phone", "country"})
 @XmlRootElement
 class Company {
 
@@ -15,6 +15,8 @@ class Company {
   private int inn;
   @SerializedName("phones")
   private List<Phone> phone = new ArrayList<>();
+  private String country;
+  // private String city;
 
   // Методы сеттеры
   //@XmlElement
@@ -29,6 +31,8 @@ class Company {
   @XmlElementWrapper(name="phones")
   @XmlElement
   public void setPhone(List<Phone> phone) { this.phone = phone; }
+  @XmlElement
+  public void setCountry(String country) { this.country = country; }
 
   // Методы геттеры
   public int getId() { return id; }
@@ -36,13 +40,15 @@ class Company {
   public String getEmail() { return email; }
   public int getInn() { return inn; }
   public List<Phone> getPhone() { return phone; }
+  public String getCountry() { return country; }
 
-  public static Company createCompany(int id, String name, String email, int inn) {
+  public static Company createCompany(int id, String name, String email, int inn, String country) {
     Company company = new Company();
     company.setId(id);
     company.setName(name);
     company.setEmail(email);
     company.setInn(inn);
+    company.setCountry(country);
     return company;
   }
 

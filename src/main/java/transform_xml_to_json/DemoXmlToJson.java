@@ -11,7 +11,7 @@ class DemoXmlToJson extends BaseClass {
 
   public static void main(String[] args) {
     System.out.println("Создаём Java-объект");
-    Company bcs = createCompany(601, "БКС", "bcs@testemail.ru", 112901);
+    Company bcs = createCompany(601, "БКС", "bcs@testemail.ru", 112901, "Россия");
     bcs.getPhone().add(createPhone("Мобильный", "+7(383)", "220-99-00"));
     bcs.getPhone().add(createPhone("Факс", "+7(666)", "333-88-44"));
 
