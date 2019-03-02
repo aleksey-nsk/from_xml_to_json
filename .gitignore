@@ -20,11 +20,3 @@ target/
 
 # Логи
 debug.log
-
-# Добавлю в игнор файлы, которые временно не нужны
-# Убрать их потом из игнора !!!
-src/main/java/manipulating_json_1/
-src/main/java/manipulating_json_2/
-src/main/java/manipulating_xml/
-testfiles/customer.xml
-testfiles/file.json
