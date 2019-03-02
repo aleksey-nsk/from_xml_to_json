@@ -17,20 +17,20 @@ class BaseClass {
   // -------------------------------------------
   // Объект для создания XML-файла
   // -------------------------------------------
-  private static final File fileXml = new File("testfiles\\company.xml");
+  private static final File fileXml = new File("src\\main\\resources\\company.xml");
 
   // -------------------------------------------
   // Объект для создания JSON-файла
   // -------------------------------------------
-  private static File companyJson = new File("testfiles\\company.json");
-  private static final String absolutePathToFile = companyJson.getAbsolutePath(); // абсолютный путь к файлу начиная с корня системы
+  private static File companyJson = new File("src\\main\\resources\\company.json");
+  private static final String absolutePathToFile = companyJson.getAbsolutePath(); // абсолютный путь к файлу
   private static final String FILENAME = absolutePathToFile;
 
   // -------------------------------------------
   // Преобразование Java-объекта в XML-файл
   // -------------------------------------------
   protected static void fromObjectToXml(Company company) {
-    System.out.println("\n***** Метод для преобразования Java-объекта в XML-файл *****\n");
+    System.out.println("\n***** Метод для преобразования Java-объекта в XML-файл (НАЧАЛО) *****");
     try {
       JAXBContext context = JAXBContext.newInstance(Company.class);
       Marshaller marshaller = context.createMarshaller();
@@ -40,18 +40,20 @@ class BaseClass {
     } catch (JAXBException e) {
       Logger.getLogger(DemoXmlToJson.class.getName()).log(Level.SEVERE, null, e);
     }
+    System.out.println("***** Метод для преобразования Java-объекта в XML-файл (КОНЕЦ) *****");
   }
 
   // -------------------------------------------
   // Преобразование XML-файла в Java-объект
   // -------------------------------------------
   protected static Company fromXmlToObject() throws JAXBException {
-    System.out.println("\n***** Метод для преобразования XML-файла в Java-объект *****\n");
+    System.out.println("\n***** Метод для преобразования XML-файла в Java-объект (НАЧАЛО) *****");
     JAXBContext context = JAXBContext.newInstance(Company.class);
     Unmarshaller unmarshaller = context.createUnmarshaller();
     Company company = (Company) unmarshaller.unmarshal(fileXml);
     System.out.println("Java-объект, полученный из XML-файла:");
     System.out.println(company);
+    System.out.println("***** Метод для преобразования XML-файла в Java-объект (КОНЕЦ) *****\n");
     return company;
   }
 
@@ -59,7 +61,7 @@ class BaseClass {
   // Преобразование Java-объекта в JSON-файл
   // -------------------------------------------
   protected static void fromObjectToJson(Company company) {
-    System.out.println("\n***** Метод для преобразования Java-объекта в JSON-файл *****\n");
+    System.out.println("\n***** Метод для преобразования Java-объекта в JSON-файл (НАЧАЛО) *****");
     // Gson gson = new Gson();
     Gson gson = new GsonBuilder().setPrettyPrinting().create(); // красивый JSON-файл с отступами
     String jsonString = gson.toJson(company);
@@ -70,5 +72,6 @@ class BaseClass {
     } catch (IOException e) {
       Logger.getLogger(DemoXmlToJson.class.getName()).log(Level.SEVERE, null, e);
     }
+    System.out.println("***** Метод для преобразования Java-объекта в JSON-файл (КОНЕЦ) *****");
   }
 }
